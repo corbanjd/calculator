@@ -214,7 +214,7 @@ function clickTimes(){
     }
     */
 
-    else if (equalsClicked === true){
+    else if (equalsClicked === true ){
         ramNumber = parseInt(ramNumber, 10);
         screenNumber = parseInt(screenNumber, 10);
         ramNumber = ramNumber*1;
@@ -303,13 +303,14 @@ function clickPlus(){
 
 
 function clickAC(){
-    screenNumber = 0;
-    ramNumber = 0;
-    screen.textContent = screenNumber;
+    screenNumber = "";
+    ramNumber = "";
+    screen.textContent = "LET'S START OVER.";
     minusClicked = false;
     timesClicked = false;
     divisionClicked = false;
     plusClicked = false;
+    equalsClicked = false;
 }
 
 function clickOne() { 
@@ -380,5 +381,4 @@ minus.addEventListener('click', clickMinus);
 times.addEventListener('click', clickTimes);
 division.addEventListener('click', clickDivision);
 
-
-
+let dividingByZero = false;
