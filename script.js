@@ -49,6 +49,8 @@ let minus = document.querySelector('#minus');
 //multiplication
 times = document.querySelector("#x")
 //confession
+//division
+division = document.querySelector("#division")
 let confession = console.log("This was created - in the context of time - for the equals sign to only work once two numbers have been clicked")
 let plusClicked = false;
 let minusClicked = false;
@@ -106,7 +108,22 @@ else if (timesClicked === true){
     plusClicked = false;
     equalsClicked = true;
 
+
+    
+
 }
+
+else if (divisionClicked === true){
+    screenNumber = parseInt(screenNumber, 10);
+    newScreen = ramNumber/screenNumber;
+    screen.textContent = newScreen;
+    ramNumber = newScreen;
+    screenNumber = 0;
+    minusClicked = false;
+    timesClicked = false;
+    divisionClicked = false;
+    plusClicked = false;
+    equalsClicked = true;
 
 /*
 else if (minusClicked === true){
@@ -128,6 +145,55 @@ else if (minusClicked === true){
 // add the query selector
 
 // for subtractions 
+
+}
+
+}
+
+function clickDivision(){
+
+    if (ramNumber===""){
+        ramNumber=parseInt(screenNumber, 10);
+        minusClicked = false;
+        timesClicked = false;
+        divisionClicked = true;
+        plusClicked = false;
+        screenNumber=0;
+        }
+
+    /*
+    else if (equalsClicked === true){
+
+    }
+    */
+
+    else if (equalsClicked === true){
+        ramNumber = parseInt(ramNumber, 10);
+        screenNumber = parseInt(screenNumber, 10);
+        ramNumber = ramNumber*1;
+        minusClicked = false;
+        timesClicked = false;
+        divisionClicked = true;
+        plusClicked = false;
+        screenNumber=0;
+
+    }
+    
+        else {
+
+            ramNumber = parseInt(ramNumber, 10);
+            screenNumber = parseInt(screenNumber, 10);
+            ramNumber = ramNumber/screenNumber;
+            minusClicked = false;
+            timesClicked = false;
+            divisionClicked = true;
+            plusClicked = false;
+            screenNumber=0;
+        }
+
+        
+        
+        screen.textContent =  "÷";
 
 }
 
@@ -312,5 +378,7 @@ plus.addEventListener('click', clickPlus);
 equals.addEventListener('click', clickEquals);
 minus.addEventListener('click', clickMinus);
 times.addEventListener('click', clickTimes);
+division.addEventListener('click', clickDivision);
+
 
 
